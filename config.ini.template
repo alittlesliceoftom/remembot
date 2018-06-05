@@ -1,0 +1,10 @@
+[quotes]
+1 = Put an example here
+2 = Any text is fine
+3 = Even *markdown* works _fine_ too 'slack approved only' #ftw. #examples
+
+[slackbot]
+hook =
+
+[config]
+logs_path = c:\FolderYouWantYourLogsIn

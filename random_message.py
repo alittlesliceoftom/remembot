@@ -1,7 +1,7 @@
 import random
 import configparser
 import os
-from slack_bot import send_message_to_slack
+from slack_bot import send_message_to_slack, MsgStatus
 
 def get_config(section):
     config = configparser.ConfigParser()
@@ -24,7 +24,7 @@ msg = get_random_message()
 
 print(msg)
 
-send_message_to_slack(message = msg, channel = '@tomoneill')
+send_message_to_slack(message = msg, channel = '@tomoneill', status = MsgStatus.OK)
 # for (i, s) in conf.items():
 #     print(s)
 #     print(i)
