@@ -105,3 +105,7 @@ venv.bak/
 
 #custom
 *.ini
+<<<<<<< HEAD
+=======
+.idea/
+>>>>>>> ee7d9465454e9d1cd0a5aa0050792ac01e726211
