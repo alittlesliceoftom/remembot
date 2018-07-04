@@ -13,19 +13,22 @@ def get_config(section):
     else:
         raise Exception('Config for {} does not exist'.format(section))
 
-def get_random_message():
+def get_message(messageReference = None):
     '''Config contains quotes'''
     ##could improve by using a hierarchical json, then can do logic which
     conf = get_config('quotes')
     l = len(conf.items())
-    r = random.randint(1,l)
-    return conf[str(r)]
+    if messageReference == None:
+        messageReference = random.randint(1,l)
+    return conf[str(messageReference)]
 
-msg = get_random_message()
 
-print(msg)
+if __name__ == "__main__":
+    msg = get_message()
+    print(msg)
+    g = get_config('slackbot')
+    channel = g['channel']
 
-send_message_to_slack(message = msg, channel = '@tomoneill', status = MsgStatus.OK)
-# for (i, s) in conf.items():
-#     print(s)
-#     print(i)
+    send_message_to_slack(message = msg, channel = '@tomoneill', status = MsgStatus.OK)
+
+    # send_message_to_slack(message = msg, channel = channel, status = MsgStatus.OK)

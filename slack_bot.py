@@ -3,7 +3,7 @@ import json
 
 from enum import Enum
 import configparser
-from python_logger import logger_set_up
+from python_logger import logger_set_up, log_with
 from data_connections import get_config
 
 log = logger_set_up(__file__)
@@ -14,7 +14,7 @@ class MsgStatus(Enum):
     INFO = '#bbbbbb'  # Grey
     OK = '#00D000'  # Green
 
-
+@log_with(log)
 def send_message_to_slack(message,
                           title='',
                           channel='@tom.oneill',
@@ -73,7 +73,7 @@ def send_message_to_slack(message,
         except Exception as e:
             log.exception('OMG - something went wrong!\n{}'.format(e))
 
-
+@log_with(log)
 def _get_slack_hook():
     """Gets the Slack hook from the config file.
     Returns:
