@@ -51,7 +51,7 @@ def add_quote(data, s=None, msgSection='quotes', ):
     '''
     if not s:
         # if no strin provided request input
-        s = input('Add your quote here: ')
+        s = input("Add your quote here: ")
     if s == '':
         return
     array = data[msgSection]
@@ -66,11 +66,14 @@ if __name__ == "__main__":
     print(msg)
     g = get_config('slackbot')
     channel = g['channel']
-    ##add a new quote
-    data = add_quote(data)
-    with open(filename,'w') as f:
-        json.dump(data, f)
-    print(data)  # print out the data we have now
+
+    #add a quotew
+    # filename = "quotes.json"
+    # data = read_json(filename)
+    # data = add_quote(data)
+    # with open(filename,'w') as f:
+    #     json.dump(data, f)
+    # print(data)  # print out the data we have now
 
     send_message_to_slack(message=msg, channel='@tomoneill', status=MsgStatus.OK)
     # for (i, s) in conf.items():
