@@ -19,7 +19,9 @@ def send_message_to_slack(message,
                           title='',
                           channel='@tom.oneill',
                           status=MsgStatus.INFO,
-                          attachment=True):
+                          attachment=True,
+                          usr = 'Remembot'
+                          ):
     """Send a message to Slack from TradingBot.
     By default, messages are sent as an attachment with an error highlight (i.e. red) to the
     #tribe_trading channel.  Markdown formatting is supported in the message body but not in
@@ -41,7 +43,7 @@ def send_message_to_slack(message,
     """
 
     msg = {
-        'username': 'Remembot',
+        'username': usr,
         'icon_emoji': ':rick:',
         'channel': channel
     }

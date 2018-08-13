@@ -27,8 +27,8 @@ def process_location(site, id):
         msg = msg + s
         print(msg)
 
-        send_message_to_slack(message=msg, channel='@tomoneill', status=MsgStatus.OK)
-        send_message_to_slack(message=msg, channel='@dylan.atwell', status=MsgStatus.OK)
+        send_message_to_slack(message=msg, channel='@tomoneill', status=MsgStatus.OK, usr = "SurfBot")
+        send_message_to_slack(message=msg, channel='@dylan.atwell', status=MsgStatus.OK, usr = "SurfBot")
     return
 
 if __name__ == '__main__':
