@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     ##add a new quote
     data = add_quote(data)
-    with open(filename,'w']]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]#] )  as f:
+    with open(filename,'w')  as f:
         json.dump(data, f)
     print(data)  # print out the data we have now
 
