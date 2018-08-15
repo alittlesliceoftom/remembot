@@ -62,7 +62,10 @@ def add_quote(data, s=None, msgSection='quotes', ):
 
 
 if __name__ == "__main__":
-    msg = get_message()
+    filename = "quotes.json"
+    data = read_json(filename)
+    # data = add_quote(data)
+    msg = get_message_from_json(data)
     print(msg)
     g = get_config('slackbot')
     channel = g['channel']
@@ -76,6 +79,7 @@ if __name__ == "__main__":
     # print(data)  # print out the data we have now
 
     send_message_to_slack(message=msg, channel='@tomoneill', status=MsgStatus.OK)
+    print(msg)
     # for (i, s) in conf.items():
     #     print(s)
     #     print(i)
