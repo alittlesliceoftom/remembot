@@ -2,9 +2,8 @@ import requests
 import json
 
 from enum import Enum
-import configparser
-from python_logger import logger_set_up, log_with
-from data_connections import get_config
+from remembot.python_logger import logger_set_up, log_with
+from remembot.data_connections import get_config
 
 log = logger_set_up(__file__)
 

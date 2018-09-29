@@ -4,7 +4,7 @@ import os
 import datetime
 import pathlib
 
-from data_connections import get_config
+from remembot.data_connections import get_config
 
 
 def logger_set_up(file_name):

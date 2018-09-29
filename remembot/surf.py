@@ -1,7 +1,6 @@
 import requests
-import json
 from datetime import datetime
-from slack_bot import send_message_to_slack, MsgStatus
+from remembot.slack_bot import send_message_to_slack, MsgStatus
 
 def process_location(site, id):
 
@@ -31,7 +30,7 @@ def process_location(site, id):
         send_message_to_slack(message=msg, channel='@dylan.atwell', status=MsgStatus.OK, usr = "SurfBot")
     return
 
-if __name__ == '__main__':
+def run_surf_bot():
     locs = ["Porthcawl", "Woolacombe"]
     ids = [1449,1352]
     sites = dict(zip(locs,ids))
@@ -39,3 +38,7 @@ if __name__ == '__main__':
 
     for k, v in sites.items():
         process_location(k, v)
+    return
+
+if __name__ == '__main__':
+    run_surf_bot()

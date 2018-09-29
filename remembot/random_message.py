@@ -1,19 +1,10 @@
 import random
 import configparser
 import os
-from slack_bot import send_message_to_slack, MsgStatus
+from remembot.slack_bot import send_message_to_slack, MsgStatus
+from remembot.data_connections import get_config
 import json
 
-
-def get_config(section):
-    config = configparser.ConfigParser()
-    path = os.path.dirname(os.path.realpath(__file__))
-    config.read(os.path.join(path, 'config.ini'))
-
-    if section in config.sections():
-        return config[section]
-    else:
-        raise Exception('Config for {} does not exist'.format(section))
 
 def get_message(messageReference = None):
     '''Config contains quotes'''
