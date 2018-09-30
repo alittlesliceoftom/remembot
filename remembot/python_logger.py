@@ -12,7 +12,7 @@ def logger_set_up(file_name):
      Set up function for logging of autonoms files
     """
     # get logs folder path from config
-    path = pathlib.Path(get_config('config')['logs_path'])
+    path = pathlib.Path(get_config(section = 'config')['logs_path'])
 
     # get current date in same format as current log files for filename
     dt = datetime.datetime.today().strftime('%Y_%m_%d')

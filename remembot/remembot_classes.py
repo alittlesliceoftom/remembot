@@ -3,14 +3,19 @@ from remembot.random_message import *
 class item_to_remember():
 
     def __init__(self, name, msg, link = None):
+        '''create the item object'''
         self.name = name
         self.views = 0
         self.msg = msg
+        self.users = []
         if link:
             self.link  = link
 
     def increment_item_view_count(self):
         self.view += 1
+
+    def add_user(self, user_handle):
+        self.users.append(user_handle)
 
 
 class user():
@@ -22,7 +27,9 @@ class user():
 
     def remember_item(self, item):
         # if self.items_to_remember:
-        self.items_to_remember.append({'name':item.name, 'item':item})
+        if {'name':item.name, 'item':item} not in self.items_to_remember:
+            self.items_to_remember.append({'name':item.name, 'item':item})
+            item.add_user(self.user_handle)
         # else:
         #     self.items_to_remember = [{'name':item.name, 'item':item}]
 
