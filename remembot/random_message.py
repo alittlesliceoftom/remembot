@@ -32,10 +32,10 @@ def read_json(filename):
     return data
 
 
-def add_quote(data, s=None, msgSection='quotes', ):
+def add_quote(messages, s=None, msgSection='quotes', ):
     '''
     adds a quote to the json object "data"
-    :param data:
+    :param messages: json list of messages
     :param s: if provided add this quote, if not ask for user input
     :param msgSection:
     :return:
@@ -45,10 +45,10 @@ def add_quote(data, s=None, msgSection='quotes', ):
         s = input("Add your quote here: ")
     if s == '':
         return
-    array = data[msgSection]
+    array = messages[msgSection]
     array.append(s)
-    data[msgSection] = array
-    return data
+    messages[msgSection] = array
+    return messages
 
 
 

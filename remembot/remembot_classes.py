@@ -39,3 +39,11 @@ class user():
         item = list(filter(lambda x: x['name'] == item_name, self.items_to_remember))[0]['item']  #https://stackoverflow.com/questions/8653516/python-list-of-dictionaries-search
         print(item)
         send_message_to_slack(message=item.msg,  channel=self.user_handle , status=MsgStatus.OK)
+
+    def pickle_self(self, name='user.p'):
+        import pickle
+        pickle.dump(self, name)
+
+    def remember_items_from_json(self, json_file = 'quotes.json'):
+        data = read_json(json_file)
+        print(data)
